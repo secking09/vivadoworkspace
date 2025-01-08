@@ -1,0 +1,917 @@
+
+*** Running vivado
+    with args -log convolution_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source convolution_top.tcl
+
+
+****** Vivado v2022.1 (64-bit)
+  **** SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
+  **** IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source convolution_top.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/sg24duk/vivadoworkspace/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/sg24duk/tools/Xilinx/Vivado/2022.1/data/ip'.
+Command: read_checkpoint -auto_incremental -incremental /home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/utils_1/imports/synth_1/convolution_top.dcp
+INFO: [Vivado 12-5825] Read reference checkpoint from /home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/utils_1/imports/synth_1/convolution_top.dcp for incremental synthesis
+INFO: [Vivado 12-7989] Please ensure there are no constraint changes
+Command: synth_design -top convolution_top -part xczu4cg-sfvc784-1-i
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xczu4cg'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xczu4cg'
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 525149
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2912.812 ; gain = 0.000 ; free physical = 10234 ; free virtual = 20981
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'convolution_top' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/convolution_top.v:4]
+INFO: [Synth 8-6157] synthesizing module 'buffer_CU' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:3]
+	Parameter IMG_BIT_WIDTH bound to: 8 - type: integer 
+	Parameter IMG_WIDTH bound to: 1012 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:98]
+INFO: [Synth 8-6157] synthesizing module 'linebuffer' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/linebuffer.v:3]
+	Parameter IMG_WIDTH bound to: 1012 - type: integer 
+	Parameter IMG_BIT_WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'linebuffer' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/linebuffer.v:3]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:310]
+INFO: [Synth 8-6155] done synthesizing module 'buffer_CU' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:3]
+INFO: [Synth 8-6157] synthesizing module 'CWODSP_Gaussian' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/convolutor.v:85]
+INFO: [Synth 8-6157] synthesizing module 'MULTB' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/convolutor.v:29]
+INFO: [Synth 8-6155] done synthesizing module 'MULTB' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/convolutor.v:29]
+INFO: [Synth 8-6157] synthesizing module 'parametric_RCA' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/airthmetic_circuits.v:50]
+	Parameter SIZE bound to: 24 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'FA' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/airthmetic_circuits.v:19]
+INFO: [Synth 8-6157] synthesizing module 'HA' [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/airthmetic_circuits.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'HA' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/airthmetic_circuits.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'FA' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/airthmetic_circuits.v:19]
+INFO: [Synth 8-6155] done synthesizing module 'parametric_RCA' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/airthmetic_circuits.v:50]
+INFO: [Synth 8-6155] done synthesizing module 'CWODSP_Gaussian' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/convolutor.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'convolution_top' (0#1) [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/convolution_top.v:4]
+WARNING: [Synth 8-6014] Unused sequential element data_reg_reg was removed.  [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:78]
+WARNING: [Synth 8-6014] Unused sequential element conv_started_reg was removed.  [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:94]
+WARNING: [Synth 8-6014] Unused sequential element t_last_counter_reg was removed.  [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:356]
+WARNING: [Synth 8-3848] Net video_tready in module/entity buffer_CU does not have driver. [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:18]
+WARNING: [Synth 8-3848] Net sel_mux in module/entity buffer_CU does not have driver. [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:20]
+WARNING: [Synth 8-3848] Net read_en in module/entity buffer_CU does not have driver. [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/buffer_CU.v:21]
+WARNING: [Synth 8-3848] Net valid_w in module/entity convolution_top does not have driver. [/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.srcs/sources_1/new/convolution_top.v:27]
+WARNING: [Synth 8-7129] Port video_tready in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sel_mux[1] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sel_mux[0] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[3] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[2] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[1] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[0] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port video_tlast in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port video_tuser in module buffer_CU is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2912.812 ; gain = 0.000 ; free physical = 11343 ; free virtual = 22091
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2912.812 ; gain = 0.000 ; free physical = 11340 ; free virtual = 22088
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xczu4cg-sfvc784-1-i
+INFO: [Synth 8-6742] Reading net delay rules and data
+INFO: [Device 21-403] Loading part xczu4cg-sfvc784-1-i
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2920.816 ; gain = 8.004 ; free physical = 11338 ; free virtual = 22086
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'buffer_CU'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              000 |                             0000
+                  FILLB0 |                              001 |                             0001
+                  FILLB1 |                              010 |                             0010
+                  FILLB2 |                              011 |                             0011
+                  FILLB3 |                              100 |                             0100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'buffer_CU'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2920.816 ; gain = 8.004 ; free physical = 11262 ; free virtual = 22011
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   13 Bit       Adders := 1     
+	   2 Input   10 Bit       Adders := 12    
++---XORs : 
+	   2 Input      1 Bit         XORs := 384   
++---Registers : 
+	               72 Bit    Registers := 1     
+	               13 Bit    Registers := 1     
+	               10 Bit    Registers := 4     
+	                8 Bit    Registers := 13    
+	                4 Bit    Registers := 4     
+	                1 Bit    Registers := 30    
++---RAMs : 
+	               7K Bit	(1012 X 8 bit)          RAMs := 4     
++---Muxes : 
+	   5 Input   72 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
+	   3 Input    4 Bit        Muxes := 3     
+	   5 Input    4 Bit        Muxes := 2     
+	   2 Input    3 Bit        Muxes := 6     
+	   5 Input    3 Bit        Muxes := 1     
+	   5 Input    2 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 10    
+	   5 Input    1 Bit        Muxes := 5     
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 728 (col length:96)
+BRAMs: 256 (col length: RAMB18 96 RAMB36 48)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port video_tready in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sel_mux[1] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sel_mux[0] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[3] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[2] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[1] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port read_en[0] in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port video_tlast in module buffer_CU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port video_tuser in module buffer_CU is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10517 ; free virtual = 21269
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Preliminary Mapping Report (see note below)
++----------------+-------------------------+-----------+----------------------+---------------+
+|Module Name     | RTL Object              | Inference | Size (Depth x Width) | Primitives    | 
++----------------+-------------------------+-----------+----------------------+---------------+
+|convolution_top | controller/lB0/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
+|convolution_top | controller/lB1/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
+|convolution_top | controller/lB2/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
+|convolution_top | controller/lB3/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
++----------------+-------------------------+-----------+----------------------+---------------+
+
+Note: The table above is a preliminary report that shows the Distributed RAMs at the current stage of the synthesis flow. Some Distributed RAMs may be reimplemented as non Distributed RAM primitives later in the synthesis flow. Multiple instantiated RAMs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:16 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10519 ; free virtual = 21271
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Distributed RAM: Final Mapping Report
++----------------+-------------------------+-----------+----------------------+---------------+
+|Module Name     | RTL Object              | Inference | Size (Depth x Width) | Primitives    | 
++----------------+-------------------------+-----------+----------------------+---------------+
+|convolution_top | controller/lB0/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
+|convolution_top | controller/lB1/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
+|convolution_top | controller/lB2/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
+|convolution_top | controller/lB3/line_reg | Implied   | 1 K x 8              | RAM64M8 x 96  | 
++----------------+-------------------------+-----------+----------------------+---------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10509 ; free virtual = 21261
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10509 ; free virtual = 21261
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10509 ; free virtual = 21261
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10509 ; free virtual = 21261
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10509 ; free virtual = 21261
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10510 ; free virtual = 21262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10510 ; free virtual = 21262
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY8   |     2|
+|3     |LUT1     |   174|
+|4     |LUT2     |  1006|
+|5     |LUT3     |   361|
+|6     |LUT4     |    38|
+|7     |LUT5     |   115|
+|8     |LUT6     |   661|
+|9     |MUXF7    |   128|
+|10    |MUXF8    |    32|
+|11    |RAM64M8  |   192|
+|12    |RAM64X1D |   192|
+|13    |FDRE     |   420|
+|14    |IBUF     |    12|
+|15    |OBUF     |     9|
+|16    |OBUFT    |     1|
++------+---------+------+
+
+Report Instance Areas: 
++------+-----------------------------+------------------+------+
+|      |Instance                     |Module            |Cells |
++------+-----------------------------+------------------+------+
+|1     |top                          |                  |  3344|
+|2     |  controller                 |buffer_CU         |  2119|
+|3     |    lB0                      |linebuffer        |   478|
+|4     |    lB1                      |linebuffer_589    |   526|
+|5     |    lB2                      |linebuffer_590    |   503|
+|6     |    lB3                      |linebuffer_591    |   478|
+|7     |  myip                       |CWODSP_Gaussian   |  1202|
+|8     |    mult1                    |MULTB             |     8|
+|9     |    mult2                    |MULTB_0           |    10|
+|10    |    mult3                    |MULTB_1           |     8|
+|11    |    mult4                    |MULTB_2           |     8|
+|12    |    mult5                    |MULTB_3           |     8|
+|13    |    mult6                    |MULTB_4           |     8|
+|14    |    mult7                    |MULTB_5           |     8|
+|15    |    mult8                    |MULTB_6           |     8|
+|16    |    mult9                    |MULTB_7           |     8|
+|17    |    rca0                     |parametric_RCA    |   154|
+|18    |      \genblk1[0].fa_param   |FA_517            |     5|
+|19    |        ha0                  |HA_587            |     2|
+|20    |        ha1                  |HA_588            |     2|
+|21    |      \genblk1[10].fa_param  |FA_518            |     5|
+|22    |        ha0                  |HA_585            |     2|
+|23    |        ha1                  |HA_586            |     2|
+|24    |      \genblk1[11].fa_param  |FA_519            |     5|
+|25    |        ha0                  |HA_583            |     2|
+|26    |        ha1                  |HA_584            |     2|
+|27    |      \genblk1[12].fa_param  |FA_520            |     5|
+|28    |        ha0                  |HA_581            |     2|
+|29    |        ha1                  |HA_582            |     2|
+|30    |      \genblk1[13].fa_param  |FA_521            |     5|
+|31    |        ha0                  |HA_579            |     2|
+|32    |        ha1                  |HA_580            |     2|
+|33    |      \genblk1[14].fa_param  |FA_522            |     5|
+|34    |        ha0                  |HA_577            |     2|
+|35    |        ha1                  |HA_578            |     2|
+|36    |      \genblk1[15].fa_param  |FA_523            |     5|
+|37    |        ha0                  |HA_575            |     2|
+|38    |        ha1                  |HA_576            |     2|
+|39    |      \genblk1[16].fa_param  |FA_524            |     5|
+|40    |        ha0                  |HA_573            |     2|
+|41    |        ha1                  |HA_574            |     2|
+|42    |      \genblk1[17].fa_param  |FA_525            |     5|
+|43    |        ha0                  |HA_571            |     2|
+|44    |        ha1                  |HA_572            |     2|
+|45    |      \genblk1[18].fa_param  |FA_526            |     5|
+|46    |        ha0                  |HA_569            |     2|
+|47    |        ha1                  |HA_570            |     2|
+|48    |      \genblk1[19].fa_param  |FA_527            |     5|
+|49    |        ha0                  |HA_567            |     2|
+|50    |        ha1                  |HA_568            |     2|
+|51    |      \genblk1[1].fa_param   |FA_528            |     5|
+|52    |        ha0                  |HA_565            |     2|
+|53    |        ha1                  |HA_566            |     2|
+|54    |      \genblk1[20].fa_param  |FA_529            |     5|
+|55    |        ha0                  |HA_563            |     2|
+|56    |        ha1                  |HA_564            |     2|
+|57    |      \genblk1[21].fa_param  |FA_530            |     5|
+|58    |        ha0                  |HA_561            |     2|
+|59    |        ha1                  |HA_562            |     2|
+|60    |      \genblk1[22].fa_param  |FA_531            |     5|
+|61    |        ha0                  |HA_559            |     2|
+|62    |        ha1                  |HA_560            |     2|
+|63    |      \genblk1[23].fa_param  |FA_532            |     5|
+|64    |        ha0                  |HA_557            |     2|
+|65    |        ha1                  |HA_558            |     2|
+|66    |      \genblk1[2].fa_param   |FA_533            |     5|
+|67    |        ha0                  |HA_555            |     2|
+|68    |        ha1                  |HA_556            |     2|
+|69    |      \genblk1[3].fa_param   |FA_534            |     5|
+|70    |        ha0                  |HA_553            |     2|
+|71    |        ha1                  |HA_554            |     2|
+|72    |      \genblk1[4].fa_param   |FA_535            |     5|
+|73    |        ha0                  |HA_551            |     2|
+|74    |        ha1                  |HA_552            |     2|
+|75    |      \genblk1[5].fa_param   |FA_536            |     5|
+|76    |        ha0                  |HA_549            |     2|
+|77    |        ha1                  |HA_550            |     2|
+|78    |      \genblk1[6].fa_param   |FA_537            |     5|
+|79    |        ha0                  |HA_547            |     2|
+|80    |        ha1                  |HA_548            |     2|
+|81    |      \genblk1[7].fa_param   |FA_538            |     5|
+|82    |        ha0                  |HA_545            |     2|
+|83    |        ha1                  |HA_546            |     2|
+|84    |      \genblk1[8].fa_param   |FA_539            |     5|
+|85    |        ha0                  |HA_543            |     2|
+|86    |        ha1                  |HA_544            |     2|
+|87    |      \genblk1[9].fa_param   |FA_540            |     5|
+|88    |        ha0                  |HA_541            |     2|
+|89    |        ha1                  |HA_542            |     2|
+|90    |    rca1                     |parametric_RCA_8  |   154|
+|91    |      \genblk1[0].fa_param   |FA_445            |     5|
+|92    |        ha0                  |HA_515            |     2|
+|93    |        ha1                  |HA_516            |     2|
+|94    |      \genblk1[10].fa_param  |FA_446            |     5|
+|95    |        ha0                  |HA_513            |     2|
+|96    |        ha1                  |HA_514            |     2|
+|97    |      \genblk1[11].fa_param  |FA_447            |     5|
+|98    |        ha0                  |HA_511            |     2|
+|99    |        ha1                  |HA_512            |     2|
+|100   |      \genblk1[12].fa_param  |FA_448            |     5|
+|101   |        ha0                  |HA_509            |     2|
+|102   |        ha1                  |HA_510            |     2|
+|103   |      \genblk1[13].fa_param  |FA_449            |     5|
+|104   |        ha0                  |HA_507            |     2|
+|105   |        ha1                  |HA_508            |     2|
+|106   |      \genblk1[14].fa_param  |FA_450            |     5|
+|107   |        ha0                  |HA_505            |     2|
+|108   |        ha1                  |HA_506            |     2|
+|109   |      \genblk1[15].fa_param  |FA_451            |     5|
+|110   |        ha0                  |HA_503            |     2|
+|111   |        ha1                  |HA_504            |     2|
+|112   |      \genblk1[16].fa_param  |FA_452            |     5|
+|113   |        ha0                  |HA_501            |     2|
+|114   |        ha1                  |HA_502            |     2|
+|115   |      \genblk1[17].fa_param  |FA_453            |     5|
+|116   |        ha0                  |HA_499            |     2|
+|117   |        ha1                  |HA_500            |     2|
+|118   |      \genblk1[18].fa_param  |FA_454            |     5|
+|119   |        ha0                  |HA_497            |     2|
+|120   |        ha1                  |HA_498            |     2|
+|121   |      \genblk1[19].fa_param  |FA_455            |     5|
+|122   |        ha0                  |HA_495            |     2|
+|123   |        ha1                  |HA_496            |     2|
+|124   |      \genblk1[1].fa_param   |FA_456            |     5|
+|125   |        ha0                  |HA_493            |     2|
+|126   |        ha1                  |HA_494            |     2|
+|127   |      \genblk1[20].fa_param  |FA_457            |     5|
+|128   |        ha0                  |HA_491            |     2|
+|129   |        ha1                  |HA_492            |     2|
+|130   |      \genblk1[21].fa_param  |FA_458            |     5|
+|131   |        ha0                  |HA_489            |     2|
+|132   |        ha1                  |HA_490            |     2|
+|133   |      \genblk1[22].fa_param  |FA_459            |     5|
+|134   |        ha0                  |HA_487            |     2|
+|135   |        ha1                  |HA_488            |     2|
+|136   |      \genblk1[23].fa_param  |FA_460            |     5|
+|137   |        ha0                  |HA_485            |     2|
+|138   |        ha1                  |HA_486            |     2|
+|139   |      \genblk1[2].fa_param   |FA_461            |     5|
+|140   |        ha0                  |HA_483            |     2|
+|141   |        ha1                  |HA_484            |     2|
+|142   |      \genblk1[3].fa_param   |FA_462            |     5|
+|143   |        ha0                  |HA_481            |     2|
+|144   |        ha1                  |HA_482            |     2|
+|145   |      \genblk1[4].fa_param   |FA_463            |     5|
+|146   |        ha0                  |HA_479            |     2|
+|147   |        ha1                  |HA_480            |     2|
+|148   |      \genblk1[5].fa_param   |FA_464            |     5|
+|149   |        ha0                  |HA_477            |     2|
+|150   |        ha1                  |HA_478            |     2|
+|151   |      \genblk1[6].fa_param   |FA_465            |     5|
+|152   |        ha0                  |HA_475            |     2|
+|153   |        ha1                  |HA_476            |     2|
+|154   |      \genblk1[7].fa_param   |FA_466            |     5|
+|155   |        ha0                  |HA_473            |     2|
+|156   |        ha1                  |HA_474            |     2|
+|157   |      \genblk1[8].fa_param   |FA_467            |     5|
+|158   |        ha0                  |HA_471            |     2|
+|159   |        ha1                  |HA_472            |     2|
+|160   |      \genblk1[9].fa_param   |FA_468            |     5|
+|161   |        ha0                  |HA_469            |     2|
+|162   |        ha1                  |HA_470            |     2|
+|163   |    rca2                     |parametric_RCA_9  |   154|
+|164   |      \genblk1[0].fa_param   |FA_373            |     5|
+|165   |        ha0                  |HA_443            |     2|
+|166   |        ha1                  |HA_444            |     2|
+|167   |      \genblk1[10].fa_param  |FA_374            |     5|
+|168   |        ha0                  |HA_441            |     2|
+|169   |        ha1                  |HA_442            |     2|
+|170   |      \genblk1[11].fa_param  |FA_375            |     5|
+|171   |        ha0                  |HA_439            |     2|
+|172   |        ha1                  |HA_440            |     2|
+|173   |      \genblk1[12].fa_param  |FA_376            |     5|
+|174   |        ha0                  |HA_437            |     2|
+|175   |        ha1                  |HA_438            |     2|
+|176   |      \genblk1[13].fa_param  |FA_377            |     5|
+|177   |        ha0                  |HA_435            |     2|
+|178   |        ha1                  |HA_436            |     2|
+|179   |      \genblk1[14].fa_param  |FA_378            |     5|
+|180   |        ha0                  |HA_433            |     2|
+|181   |        ha1                  |HA_434            |     2|
+|182   |      \genblk1[15].fa_param  |FA_379            |     5|
+|183   |        ha0                  |HA_431            |     2|
+|184   |        ha1                  |HA_432            |     2|
+|185   |      \genblk1[16].fa_param  |FA_380            |     5|
+|186   |        ha0                  |HA_429            |     2|
+|187   |        ha1                  |HA_430            |     2|
+|188   |      \genblk1[17].fa_param  |FA_381            |     5|
+|189   |        ha0                  |HA_427            |     2|
+|190   |        ha1                  |HA_428            |     2|
+|191   |      \genblk1[18].fa_param  |FA_382            |     5|
+|192   |        ha0                  |HA_425            |     2|
+|193   |        ha1                  |HA_426            |     2|
+|194   |      \genblk1[19].fa_param  |FA_383            |     5|
+|195   |        ha0                  |HA_423            |     2|
+|196   |        ha1                  |HA_424            |     2|
+|197   |      \genblk1[1].fa_param   |FA_384            |     5|
+|198   |        ha0                  |HA_421            |     2|
+|199   |        ha1                  |HA_422            |     2|
+|200   |      \genblk1[20].fa_param  |FA_385            |     5|
+|201   |        ha0                  |HA_419            |     2|
+|202   |        ha1                  |HA_420            |     2|
+|203   |      \genblk1[21].fa_param  |FA_386            |     5|
+|204   |        ha0                  |HA_417            |     2|
+|205   |        ha1                  |HA_418            |     2|
+|206   |      \genblk1[22].fa_param  |FA_387            |     5|
+|207   |        ha0                  |HA_415            |     2|
+|208   |        ha1                  |HA_416            |     2|
+|209   |      \genblk1[23].fa_param  |FA_388            |     5|
+|210   |        ha0                  |HA_413            |     2|
+|211   |        ha1                  |HA_414            |     2|
+|212   |      \genblk1[2].fa_param   |FA_389            |     5|
+|213   |        ha0                  |HA_411            |     2|
+|214   |        ha1                  |HA_412            |     2|
+|215   |      \genblk1[3].fa_param   |FA_390            |     5|
+|216   |        ha0                  |HA_409            |     2|
+|217   |        ha1                  |HA_410            |     2|
+|218   |      \genblk1[4].fa_param   |FA_391            |     5|
+|219   |        ha0                  |HA_407            |     2|
+|220   |        ha1                  |HA_408            |     2|
+|221   |      \genblk1[5].fa_param   |FA_392            |     5|
+|222   |        ha0                  |HA_405            |     2|
+|223   |        ha1                  |HA_406            |     2|
+|224   |      \genblk1[6].fa_param   |FA_393            |     5|
+|225   |        ha0                  |HA_403            |     2|
+|226   |        ha1                  |HA_404            |     2|
+|227   |      \genblk1[7].fa_param   |FA_394            |     5|
+|228   |        ha0                  |HA_401            |     2|
+|229   |        ha1                  |HA_402            |     2|
+|230   |      \genblk1[8].fa_param   |FA_395            |     5|
+|231   |        ha0                  |HA_399            |     2|
+|232   |        ha1                  |HA_400            |     2|
+|233   |      \genblk1[9].fa_param   |FA_396            |     5|
+|234   |        ha0                  |HA_397            |     2|
+|235   |        ha1                  |HA_398            |     2|
+|236   |    rca3                     |parametric_RCA_10 |   154|
+|237   |      \genblk1[0].fa_param   |FA_301            |     5|
+|238   |        ha0                  |HA_371            |     2|
+|239   |        ha1                  |HA_372            |     2|
+|240   |      \genblk1[10].fa_param  |FA_302            |     5|
+|241   |        ha0                  |HA_369            |     2|
+|242   |        ha1                  |HA_370            |     2|
+|243   |      \genblk1[11].fa_param  |FA_303            |     5|
+|244   |        ha0                  |HA_367            |     2|
+|245   |        ha1                  |HA_368            |     2|
+|246   |      \genblk1[12].fa_param  |FA_304            |     5|
+|247   |        ha0                  |HA_365            |     2|
+|248   |        ha1                  |HA_366            |     2|
+|249   |      \genblk1[13].fa_param  |FA_305            |     5|
+|250   |        ha0                  |HA_363            |     2|
+|251   |        ha1                  |HA_364            |     2|
+|252   |      \genblk1[14].fa_param  |FA_306            |     5|
+|253   |        ha0                  |HA_361            |     2|
+|254   |        ha1                  |HA_362            |     2|
+|255   |      \genblk1[15].fa_param  |FA_307            |     5|
+|256   |        ha0                  |HA_359            |     2|
+|257   |        ha1                  |HA_360            |     2|
+|258   |      \genblk1[16].fa_param  |FA_308            |     5|
+|259   |        ha0                  |HA_357            |     2|
+|260   |        ha1                  |HA_358            |     2|
+|261   |      \genblk1[17].fa_param  |FA_309            |     5|
+|262   |        ha0                  |HA_355            |     2|
+|263   |        ha1                  |HA_356            |     2|
+|264   |      \genblk1[18].fa_param  |FA_310            |     5|
+|265   |        ha0                  |HA_353            |     2|
+|266   |        ha1                  |HA_354            |     2|
+|267   |      \genblk1[19].fa_param  |FA_311            |     5|
+|268   |        ha0                  |HA_351            |     2|
+|269   |        ha1                  |HA_352            |     2|
+|270   |      \genblk1[1].fa_param   |FA_312            |     5|
+|271   |        ha0                  |HA_349            |     2|
+|272   |        ha1                  |HA_350            |     2|
+|273   |      \genblk1[20].fa_param  |FA_313            |     5|
+|274   |        ha0                  |HA_347            |     2|
+|275   |        ha1                  |HA_348            |     2|
+|276   |      \genblk1[21].fa_param  |FA_314            |     5|
+|277   |        ha0                  |HA_345            |     2|
+|278   |        ha1                  |HA_346            |     2|
+|279   |      \genblk1[22].fa_param  |FA_315            |     5|
+|280   |        ha0                  |HA_343            |     2|
+|281   |        ha1                  |HA_344            |     2|
+|282   |      \genblk1[23].fa_param  |FA_316            |     5|
+|283   |        ha0                  |HA_341            |     2|
+|284   |        ha1                  |HA_342            |     2|
+|285   |      \genblk1[2].fa_param   |FA_317            |     5|
+|286   |        ha0                  |HA_339            |     2|
+|287   |        ha1                  |HA_340            |     2|
+|288   |      \genblk1[3].fa_param   |FA_318            |     5|
+|289   |        ha0                  |HA_337            |     2|
+|290   |        ha1                  |HA_338            |     2|
+|291   |      \genblk1[4].fa_param   |FA_319            |     5|
+|292   |        ha0                  |HA_335            |     2|
+|293   |        ha1                  |HA_336            |     2|
+|294   |      \genblk1[5].fa_param   |FA_320            |     5|
+|295   |        ha0                  |HA_333            |     2|
+|296   |        ha1                  |HA_334            |     2|
+|297   |      \genblk1[6].fa_param   |FA_321            |     5|
+|298   |        ha0                  |HA_331            |     2|
+|299   |        ha1                  |HA_332            |     2|
+|300   |      \genblk1[7].fa_param   |FA_322            |     5|
+|301   |        ha0                  |HA_329            |     2|
+|302   |        ha1                  |HA_330            |     2|
+|303   |      \genblk1[8].fa_param   |FA_323            |     5|
+|304   |        ha0                  |HA_327            |     2|
+|305   |        ha1                  |HA_328            |     2|
+|306   |      \genblk1[9].fa_param   |FA_324            |     5|
+|307   |        ha0                  |HA_325            |     2|
+|308   |        ha1                  |HA_326            |     2|
+|309   |    rca4                     |parametric_RCA_11 |   138|
+|310   |      \genblk1[0].fa_param   |FA_229            |     5|
+|311   |        ha0                  |HA_299            |     2|
+|312   |        ha1                  |HA_300            |     2|
+|313   |      \genblk1[10].fa_param  |FA_230            |     5|
+|314   |        ha0                  |HA_297            |     2|
+|315   |        ha1                  |HA_298            |     2|
+|316   |      \genblk1[11].fa_param  |FA_231            |     5|
+|317   |        ha0                  |HA_295            |     2|
+|318   |        ha1                  |HA_296            |     2|
+|319   |      \genblk1[12].fa_param  |FA_232            |     5|
+|320   |        ha0                  |HA_293            |     2|
+|321   |        ha1                  |HA_294            |     2|
+|322   |      \genblk1[13].fa_param  |FA_233            |     5|
+|323   |        ha0                  |HA_291            |     2|
+|324   |        ha1                  |HA_292            |     2|
+|325   |      \genblk1[14].fa_param  |FA_234            |     5|
+|326   |        ha0                  |HA_289            |     2|
+|327   |        ha1                  |HA_290            |     2|
+|328   |      \genblk1[15].fa_param  |FA_235            |     5|
+|329   |        ha0                  |HA_287            |     2|
+|330   |        ha1                  |HA_288            |     2|
+|331   |      \genblk1[16].fa_param  |FA_236            |     5|
+|332   |        ha0                  |HA_285            |     2|
+|333   |        ha1                  |HA_286            |     2|
+|334   |      \genblk1[17].fa_param  |FA_237            |     5|
+|335   |        ha0                  |HA_283            |     2|
+|336   |        ha1                  |HA_284            |     2|
+|337   |      \genblk1[18].fa_param  |FA_238            |     5|
+|338   |        ha0                  |HA_281            |     2|
+|339   |        ha1                  |HA_282            |     2|
+|340   |      \genblk1[19].fa_param  |FA_239            |     5|
+|341   |        ha0                  |HA_279            |     2|
+|342   |        ha1                  |HA_280            |     2|
+|343   |      \genblk1[1].fa_param   |FA_240            |     5|
+|344   |        ha0                  |HA_277            |     2|
+|345   |        ha1                  |HA_278            |     2|
+|346   |      \genblk1[20].fa_param  |FA_241            |     5|
+|347   |        ha0                  |HA_275            |     2|
+|348   |        ha1                  |HA_276            |     2|
+|349   |      \genblk1[21].fa_param  |FA_242            |     5|
+|350   |        ha0                  |HA_273            |     2|
+|351   |        ha1                  |HA_274            |     2|
+|352   |      \genblk1[22].fa_param  |FA_243            |     5|
+|353   |        ha0                  |HA_271            |     2|
+|354   |        ha1                  |HA_272            |     2|
+|355   |      \genblk1[23].fa_param  |FA_244            |     5|
+|356   |        ha0                  |HA_269            |     2|
+|357   |        ha1                  |HA_270            |     2|
+|358   |      \genblk1[2].fa_param   |FA_245            |     5|
+|359   |        ha0                  |HA_267            |     2|
+|360   |        ha1                  |HA_268            |     2|
+|361   |      \genblk1[3].fa_param   |FA_246            |     5|
+|362   |        ha0                  |HA_265            |     2|
+|363   |        ha1                  |HA_266            |     2|
+|364   |      \genblk1[4].fa_param   |FA_247            |     5|
+|365   |        ha0                  |HA_263            |     2|
+|366   |        ha1                  |HA_264            |     2|
+|367   |      \genblk1[5].fa_param   |FA_248            |     5|
+|368   |        ha0                  |HA_261            |     2|
+|369   |        ha1                  |HA_262            |     2|
+|370   |      \genblk1[6].fa_param   |FA_249            |     5|
+|371   |        ha0                  |HA_259            |     2|
+|372   |        ha1                  |HA_260            |     2|
+|373   |      \genblk1[7].fa_param   |FA_250            |     5|
+|374   |        ha0                  |HA_257            |     2|
+|375   |        ha1                  |HA_258            |     2|
+|376   |      \genblk1[8].fa_param   |FA_251            |     5|
+|377   |        ha0                  |HA_255            |     2|
+|378   |        ha1                  |HA_256            |     2|
+|379   |      \genblk1[9].fa_param   |FA_252            |     5|
+|380   |        ha0                  |HA_253            |     2|
+|381   |        ha1                  |HA_254            |     2|
+|382   |    rca5                     |parametric_RCA_12 |   122|
+|383   |      \genblk1[0].fa_param   |FA_157            |     5|
+|384   |        ha0                  |HA_227            |     2|
+|385   |        ha1                  |HA_228            |     2|
+|386   |      \genblk1[10].fa_param  |FA_158            |     5|
+|387   |        ha0                  |HA_225            |     2|
+|388   |        ha1                  |HA_226            |     2|
+|389   |      \genblk1[11].fa_param  |FA_159            |     5|
+|390   |        ha0                  |HA_223            |     2|
+|391   |        ha1                  |HA_224            |     2|
+|392   |      \genblk1[12].fa_param  |FA_160            |     5|
+|393   |        ha0                  |HA_221            |     2|
+|394   |        ha1                  |HA_222            |     2|
+|395   |      \genblk1[13].fa_param  |FA_161            |     5|
+|396   |        ha0                  |HA_219            |     2|
+|397   |        ha1                  |HA_220            |     2|
+|398   |      \genblk1[14].fa_param  |FA_162            |     5|
+|399   |        ha0                  |HA_217            |     2|
+|400   |        ha1                  |HA_218            |     2|
+|401   |      \genblk1[15].fa_param  |FA_163            |     5|
+|402   |        ha0                  |HA_215            |     2|
+|403   |        ha1                  |HA_216            |     2|
+|404   |      \genblk1[16].fa_param  |FA_164            |     5|
+|405   |        ha0                  |HA_213            |     2|
+|406   |        ha1                  |HA_214            |     2|
+|407   |      \genblk1[17].fa_param  |FA_165            |     5|
+|408   |        ha0                  |HA_211            |     2|
+|409   |        ha1                  |HA_212            |     2|
+|410   |      \genblk1[18].fa_param  |FA_166            |     5|
+|411   |        ha0                  |HA_209            |     2|
+|412   |        ha1                  |HA_210            |     2|
+|413   |      \genblk1[19].fa_param  |FA_167            |     5|
+|414   |        ha0                  |HA_207            |     2|
+|415   |        ha1                  |HA_208            |     2|
+|416   |      \genblk1[1].fa_param   |FA_168            |     5|
+|417   |        ha0                  |HA_205            |     2|
+|418   |        ha1                  |HA_206            |     2|
+|419   |      \genblk1[20].fa_param  |FA_169            |     5|
+|420   |        ha0                  |HA_203            |     2|
+|421   |        ha1                  |HA_204            |     2|
+|422   |      \genblk1[21].fa_param  |FA_170            |     5|
+|423   |        ha0                  |HA_201            |     2|
+|424   |        ha1                  |HA_202            |     2|
+|425   |      \genblk1[22].fa_param  |FA_171            |     5|
+|426   |        ha0                  |HA_199            |     2|
+|427   |        ha1                  |HA_200            |     2|
+|428   |      \genblk1[23].fa_param  |FA_172            |     5|
+|429   |        ha0                  |HA_197            |     2|
+|430   |        ha1                  |HA_198            |     2|
+|431   |      \genblk1[2].fa_param   |FA_173            |     5|
+|432   |        ha0                  |HA_195            |     2|
+|433   |        ha1                  |HA_196            |     2|
+|434   |      \genblk1[3].fa_param   |FA_174            |     5|
+|435   |        ha0                  |HA_193            |     2|
+|436   |        ha1                  |HA_194            |     2|
+|437   |      \genblk1[4].fa_param   |FA_175            |     5|
+|438   |        ha0                  |HA_191            |     2|
+|439   |        ha1                  |HA_192            |     2|
+|440   |      \genblk1[5].fa_param   |FA_176            |     5|
+|441   |        ha0                  |HA_189            |     2|
+|442   |        ha1                  |HA_190            |     2|
+|443   |      \genblk1[6].fa_param   |FA_177            |     5|
+|444   |        ha0                  |HA_187            |     2|
+|445   |        ha1                  |HA_188            |     2|
+|446   |      \genblk1[7].fa_param   |FA_178            |     5|
+|447   |        ha0                  |HA_185            |     2|
+|448   |        ha1                  |HA_186            |     2|
+|449   |      \genblk1[8].fa_param   |FA_179            |     5|
+|450   |        ha0                  |HA_183            |     2|
+|451   |        ha1                  |HA_184            |     2|
+|452   |      \genblk1[9].fa_param   |FA_180            |     5|
+|453   |        ha0                  |HA_181            |     2|
+|454   |        ha1                  |HA_182            |     2|
+|455   |    rca6                     |parametric_RCA_13 |   122|
+|456   |      \genblk1[0].fa_param   |FA_85             |     5|
+|457   |        ha0                  |HA_155            |     2|
+|458   |        ha1                  |HA_156            |     2|
+|459   |      \genblk1[10].fa_param  |FA_86             |     5|
+|460   |        ha0                  |HA_153            |     2|
+|461   |        ha1                  |HA_154            |     2|
+|462   |      \genblk1[11].fa_param  |FA_87             |     5|
+|463   |        ha0                  |HA_151            |     2|
+|464   |        ha1                  |HA_152            |     2|
+|465   |      \genblk1[12].fa_param  |FA_88             |     5|
+|466   |        ha0                  |HA_149            |     2|
+|467   |        ha1                  |HA_150            |     2|
+|468   |      \genblk1[13].fa_param  |FA_89             |     5|
+|469   |        ha0                  |HA_147            |     2|
+|470   |        ha1                  |HA_148            |     2|
+|471   |      \genblk1[14].fa_param  |FA_90             |     5|
+|472   |        ha0                  |HA_145            |     2|
+|473   |        ha1                  |HA_146            |     2|
+|474   |      \genblk1[15].fa_param  |FA_91             |     5|
+|475   |        ha0                  |HA_143            |     2|
+|476   |        ha1                  |HA_144            |     2|
+|477   |      \genblk1[16].fa_param  |FA_92             |     5|
+|478   |        ha0                  |HA_141            |     2|
+|479   |        ha1                  |HA_142            |     2|
+|480   |      \genblk1[17].fa_param  |FA_93             |     5|
+|481   |        ha0                  |HA_139            |     2|
+|482   |        ha1                  |HA_140            |     2|
+|483   |      \genblk1[18].fa_param  |FA_94             |     5|
+|484   |        ha0                  |HA_137            |     2|
+|485   |        ha1                  |HA_138            |     2|
+|486   |      \genblk1[19].fa_param  |FA_95             |     5|
+|487   |        ha0                  |HA_135            |     2|
+|488   |        ha1                  |HA_136            |     2|
+|489   |      \genblk1[1].fa_param   |FA_96             |     5|
+|490   |        ha0                  |HA_133            |     2|
+|491   |        ha1                  |HA_134            |     2|
+|492   |      \genblk1[20].fa_param  |FA_97             |     5|
+|493   |        ha0                  |HA_131            |     2|
+|494   |        ha1                  |HA_132            |     2|
+|495   |      \genblk1[21].fa_param  |FA_98             |     5|
+|496   |        ha0                  |HA_129            |     2|
+|497   |        ha1                  |HA_130            |     2|
+|498   |      \genblk1[22].fa_param  |FA_99             |     5|
+|499   |        ha0                  |HA_127            |     2|
+|500   |        ha1                  |HA_128            |     2|
+|501   |      \genblk1[23].fa_param  |FA_100            |     5|
+|502   |        ha0                  |HA_125            |     2|
+|503   |        ha1                  |HA_126            |     2|
+|504   |      \genblk1[2].fa_param   |FA_101            |     5|
+|505   |        ha0                  |HA_123            |     2|
+|506   |        ha1                  |HA_124            |     2|
+|507   |      \genblk1[3].fa_param   |FA_102            |     5|
+|508   |        ha0                  |HA_121            |     2|
+|509   |        ha1                  |HA_122            |     2|
+|510   |      \genblk1[4].fa_param   |FA_103            |     5|
+|511   |        ha0                  |HA_119            |     2|
+|512   |        ha1                  |HA_120            |     2|
+|513   |      \genblk1[5].fa_param   |FA_104            |     5|
+|514   |        ha0                  |HA_117            |     2|
+|515   |        ha1                  |HA_118            |     2|
+|516   |      \genblk1[6].fa_param   |FA_105            |     5|
+|517   |        ha0                  |HA_115            |     2|
+|518   |        ha1                  |HA_116            |     2|
+|519   |      \genblk1[7].fa_param   |FA_106            |     5|
+|520   |        ha0                  |HA_113            |     2|
+|521   |        ha1                  |HA_114            |     2|
+|522   |      \genblk1[8].fa_param   |FA_107            |     5|
+|523   |        ha0                  |HA_111            |     2|
+|524   |        ha1                  |HA_112            |     2|
+|525   |      \genblk1[9].fa_param   |FA_108            |     5|
+|526   |        ha0                  |HA_109            |     2|
+|527   |        ha1                  |HA_110            |     2|
+|528   |    rca7                     |parametric_RCA_14 |   122|
+|529   |      \genblk1[0].fa_param   |FA                |     5|
+|530   |        ha0                  |HA_83             |     2|
+|531   |        ha1                  |HA_84             |     2|
+|532   |      \genblk1[10].fa_param  |FA_15             |     5|
+|533   |        ha0                  |HA_81             |     2|
+|534   |        ha1                  |HA_82             |     2|
+|535   |      \genblk1[11].fa_param  |FA_16             |     5|
+|536   |        ha0                  |HA_79             |     2|
+|537   |        ha1                  |HA_80             |     2|
+|538   |      \genblk1[12].fa_param  |FA_17             |     5|
+|539   |        ha0                  |HA_77             |     2|
+|540   |        ha1                  |HA_78             |     2|
+|541   |      \genblk1[13].fa_param  |FA_18             |     5|
+|542   |        ha0                  |HA_75             |     2|
+|543   |        ha1                  |HA_76             |     2|
+|544   |      \genblk1[14].fa_param  |FA_19             |     5|
+|545   |        ha0                  |HA_73             |     2|
+|546   |        ha1                  |HA_74             |     2|
+|547   |      \genblk1[15].fa_param  |FA_20             |     5|
+|548   |        ha0                  |HA_71             |     2|
+|549   |        ha1                  |HA_72             |     2|
+|550   |      \genblk1[16].fa_param  |FA_21             |     5|
+|551   |        ha0                  |HA_69             |     2|
+|552   |        ha1                  |HA_70             |     2|
+|553   |      \genblk1[17].fa_param  |FA_22             |     5|
+|554   |        ha0                  |HA_67             |     2|
+|555   |        ha1                  |HA_68             |     2|
+|556   |      \genblk1[18].fa_param  |FA_23             |     5|
+|557   |        ha0                  |HA_65             |     2|
+|558   |        ha1                  |HA_66             |     2|
+|559   |      \genblk1[19].fa_param  |FA_24             |     5|
+|560   |        ha0                  |HA_63             |     2|
+|561   |        ha1                  |HA_64             |     2|
+|562   |      \genblk1[1].fa_param   |FA_25             |     5|
+|563   |        ha0                  |HA_61             |     2|
+|564   |        ha1                  |HA_62             |     2|
+|565   |      \genblk1[20].fa_param  |FA_26             |     5|
+|566   |        ha0                  |HA_59             |     2|
+|567   |        ha1                  |HA_60             |     2|
+|568   |      \genblk1[21].fa_param  |FA_27             |     5|
+|569   |        ha0                  |HA_57             |     2|
+|570   |        ha1                  |HA_58             |     2|
+|571   |      \genblk1[22].fa_param  |FA_28             |     5|
+|572   |        ha0                  |HA_55             |     2|
+|573   |        ha1                  |HA_56             |     2|
+|574   |      \genblk1[23].fa_param  |FA_29             |     5|
+|575   |        ha0                  |HA_53             |     2|
+|576   |        ha1                  |HA_54             |     2|
+|577   |      \genblk1[2].fa_param   |FA_30             |     5|
+|578   |        ha0                  |HA_51             |     2|
+|579   |        ha1                  |HA_52             |     2|
+|580   |      \genblk1[3].fa_param   |FA_31             |     5|
+|581   |        ha0                  |HA_49             |     2|
+|582   |        ha1                  |HA_50             |     2|
+|583   |      \genblk1[4].fa_param   |FA_32             |     5|
+|584   |        ha0                  |HA_47             |     2|
+|585   |        ha1                  |HA_48             |     2|
+|586   |      \genblk1[5].fa_param   |FA_33             |     5|
+|587   |        ha0                  |HA_45             |     2|
+|588   |        ha1                  |HA_46             |     2|
+|589   |      \genblk1[6].fa_param   |FA_34             |     5|
+|590   |        ha0                  |HA_43             |     2|
+|591   |        ha1                  |HA_44             |     2|
+|592   |      \genblk1[7].fa_param   |FA_35             |     5|
+|593   |        ha0                  |HA_41             |     2|
+|594   |        ha1                  |HA_42             |     2|
+|595   |      \genblk1[8].fa_param   |FA_36             |     5|
+|596   |        ha0                  |HA_39             |     2|
+|597   |        ha1                  |HA_40             |     2|
+|598   |      \genblk1[9].fa_param   |FA_37             |     5|
+|599   |        ha0                  |HA                |     2|
+|600   |        ha1                  |HA_38             |     2|
++------+-----------------------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10510 ; free virtual = 21262
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.316 ; gain = 273.504 ; free physical = 10518 ; free virtual = 21270
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 3186.324 ; gain = 273.504 ; free physical = 10518 ; free virtual = 21270
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 3186.324 ; gain = 0.000 ; free physical = 10608 ; free virtual = 21360
+INFO: [Netlist 29-17] Analyzing 559 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 3242.344 ; gain = 0.000 ; free physical = 10540 ; free virtual = 21292
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 397 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 12 instances
+  RAM64M8 => RAM64M8 (RAMD64E(x8)): 192 instances
+  RAM64X1D => RAM64X1D (RAMD64E(x2)): 192 instances
+
+Synth Design complete, checksum: 3f7d31a4
+INFO: [Common 17-83] Releasing license: Synthesis
+40 Infos, 26 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:26 ; elapsed = 00:00:24 . Memory (MB): peak = 3242.344 ; gain = 329.531 ; free physical = 10747 ; free virtual = 21499
+INFO: [Common 17-1381] The checkpoint '/home/sg24duk/vivadoworkspace/2DConvolution/2DConvolution.runs/synth_1/convolution_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file convolution_top_utilization_synth.rpt -pb convolution_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Jan  7 21:01:40 2025...
