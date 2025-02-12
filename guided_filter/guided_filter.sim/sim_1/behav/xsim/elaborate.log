@@ -1,0 +1,18 @@
+Vivado Simulator v2022.1
+Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
+Running: /home/sg24duk/tools/Xilinx/Vivado/2022.1/bin/unwrapped/lnx64.o/xelab --incr --debug typical --relax --mt 8 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot box_top_tb_behav xil_defaultlib.box_top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 8 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.IIE(RADIUS=10,ROWS=512,COLS=512)
+Compiling module xil_defaultlib.RAM(DATA_WIDTH=21,WORD_WIDTH=256...
+Compiling module xil_defaultlib.RAM_top(DATA_WIDTH=21,WORD_WIDTH...
+Compiling module xil_defaultlib.box_top_default
+Compiling module xil_defaultlib.box_top_tb
+WARNING: [XSIM 43-3373] "/home/sg24duk/vivadoworkspace/guided_filter/guided_filter.srcs/sim_1/new/box_filter_tb.v" Line 46. System function $fscanf is used as system task. This system function should have a LHS e.g. x=$fscanf().
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot box_top_tb_behav

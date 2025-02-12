@@ -1,0 +1,13 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../guided_filter.srcs/sources_1/new/IIE.v" \
+"../../../../guided_filter.srcs/sources_1/new/RAM.v" \
+"../../../../guided_filter.srcs/sources_1/new/RAM_top.v" \
+"../../../../guided_filter.srcs/sources_1/new/box_top.v" \
+"../../../../guided_filter.srcs/sim_1/new/box_filter_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
