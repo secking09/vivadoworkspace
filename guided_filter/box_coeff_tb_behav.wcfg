@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="box_coeff_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="box_coeff_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0.000000 us"></ZoomStartTime>
+      <ZoomEndTime time="946.000001 us"></ZoomEndTime>
+      <Cursor1Time time="56.655000 us"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="314"></NameColumnWidth>
+      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="81" />
+   <wvobject type="logic" fp_name="/box_coeff_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/rst_n">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/valid_in_pip">
+      <obj_property name="ElementShortName">valid_in_pip</obj_property>
+      <obj_property name="ObjectShortName">valid_in_pip</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/ak_s">
+      <obj_property name="ElementShortName">ak_s[21:0]</obj_property>
+      <obj_property name="ObjectShortName">ak_s[21:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/ak_q">
+      <obj_property name="ElementShortName">ak_q[21:0]</obj_property>
+      <obj_property name="ObjectShortName">ak_q[21:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/bk_s">
+      <obj_property name="ElementShortName">bk_s[15:0]</obj_property>
+      <obj_property name="ObjectShortName">bk_s[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/bk_q">
+      <obj_property name="ElementShortName">bk_q[15:0]</obj_property>
+      <obj_property name="ObjectShortName">bk_q[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/valid_out">
+      <obj_property name="ElementShortName">valid_out</obj_property>
+      <obj_property name="ObjectShortName">valid_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/SigAk">
+      <obj_property name="ElementShortName">SigAk[21:0]</obj_property>
+      <obj_property name="ObjectShortName">SigAk[21:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/SigBk">
+      <obj_property name="ElementShortName">SigBk[15:0]</obj_property>
+      <obj_property name="ObjectShortName">SigBk[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/i">
+      <obj_property name="ElementShortName">i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">i[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/j">
+      <obj_property name="ElementShortName">j[31:0]</obj_property>
+      <obj_property name="ObjectShortName">j[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/file_a">
+      <obj_property name="ElementShortName">file_a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">file_a[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/file_b">
+      <obj_property name="ElementShortName">file_b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">file_b[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/output_file">
+      <obj_property name="ElementShortName">output_file[31:0]</obj_property>
+      <obj_property name="ObjectShortName">output_file[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/IMG_WIDTH">
+      <obj_property name="ElementShortName">IMG_WIDTH[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMG_WIDTH[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/IMG_HEIGHT">
+      <obj_property name="ElementShortName">IMG_HEIGHT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IMG_HEIGHT[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/WINDOW_SIZE">
+      <obj_property name="ElementShortName">WINDOW_SIZE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">WINDOW_SIZE[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/RADIUS">
+      <obj_property name="ElementShortName">RADIUS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">RADIUS[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/A_BITS">
+      <obj_property name="ElementShortName">A_BITS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">A_BITS[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/B_BITS">
+      <obj_property name="ElementShortName">B_BITS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">B_BITS[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider6194" type="divider">
+      <obj_property name="label">IEE_ak</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/Iq">
+      <obj_property name="ElementShortName">Iq[21:0]</obj_property>
+      <obj_property name="ObjectShortName">Iq[21:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/Is">
+      <obj_property name="ElementShortName">Is[21:0]</obj_property>
+      <obj_property name="ObjectShortName">Is[21:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/IIs">
+      <obj_property name="ElementShortName">IIs[34:0]</obj_property>
+      <obj_property name="ObjectShortName">IIs[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/valid_in">
+      <obj_property name="ElementShortName">valid_in</obj_property>
+      <obj_property name="ObjectShortName">valid_in</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/SigIi">
+      <obj_property name="ElementShortName">SigIi[28:0]</obj_property>
+      <obj_property name="ObjectShortName">SigIi[28:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/valid_out">
+      <obj_property name="ElementShortName">valid_out</obj_property>
+      <obj_property name="ObjectShortName">valid_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/wen">
+      <obj_property name="ElementShortName">wen</obj_property>
+      <obj_property name="ObjectShortName">wen</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/ren1">
+      <obj_property name="ElementShortName">ren1</obj_property>
+      <obj_property name="ObjectShortName">ren1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/ren2">
+      <obj_property name="ElementShortName">ren2</obj_property>
+      <obj_property name="ObjectShortName">ren2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/waddr">
+      <obj_property name="ElementShortName">waddr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/raddr1">
+      <obj_property name="ElementShortName">raddr1[8:0]</obj_property>
+      <obj_property name="ObjectShortName">raddr1[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/raddr2">
+      <obj_property name="ElementShortName">raddr2[8:0]</obj_property>
+      <obj_property name="ObjectShortName">raddr2[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/wdata">
+      <obj_property name="ElementShortName">wdata[34:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/rdata1">
+      <obj_property name="ElementShortName">rdata1[34:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata1[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/rdata2">
+      <obj_property name="ElementShortName">rdata2[34:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata2[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/SigIi_nxt">
+      <obj_property name="ElementShortName">SigIi_nxt[28:0]</obj_property>
+      <obj_property name="ObjectShortName">SigIi_nxt[28:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/row_count">
+      <obj_property name="ElementShortName">row_count[8:0]</obj_property>
+      <obj_property name="ObjectShortName">row_count[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/row_count_nxt">
+      <obj_property name="ElementShortName">row_count_nxt[8:0]</obj_property>
+      <obj_property name="ObjectShortName">row_count_nxt[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/col_count">
+      <obj_property name="ElementShortName">col_count[8:0]</obj_property>
+      <obj_property name="ObjectShortName">col_count[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/col_count_nxt">
+      <obj_property name="ElementShortName">col_count_nxt[8:0]</obj_property>
+      <obj_property name="ObjectShortName">col_count_nxt[8:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/II_upper_row">
+      <obj_property name="ElementShortName">II_upper_row[34:0]</obj_property>
+      <obj_property name="ObjectShortName">II_upper_row[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/II_upper_row_next">
+      <obj_property name="ElementShortName">II_upper_row_next[34:0]</obj_property>
+      <obj_property name="ObjectShortName">II_upper_row_next[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/IId">
+      <obj_property name="ElementShortName">IId[34:0]</obj_property>
+      <obj_property name="ObjectShortName">IId[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/prev_window">
+      <obj_property name="ElementShortName">prev_window[34:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_window[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_ak/prev_window_nxt">
+      <obj_property name="ElementShortName">prev_window_nxt[34:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_window_nxt[34:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/valid_in_pip">
+      <obj_property name="ElementShortName">valid_in_pip</obj_property>
+      <obj_property name="ObjectShortName">valid_in_pip</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_ak/valid_in_pip_nxt">
+      <obj_property name="ElementShortName">valid_in_pip_nxt</obj_property>
+      <obj_property name="ObjectShortName">valid_in_pip_nxt</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider6224" type="divider">
+      <obj_property name="label">IEE_bk</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/Iq">
+      <obj_property name="ElementShortName">Iq[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Iq[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/Is">
+      <obj_property name="ElementShortName">Is[15:0]</obj_property>
+      <obj_property name="ObjectShortName">Is[15:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/IIs">
+      <obj_property name="ElementShortName">IIs[28:0]</obj_property>
+      <obj_property name="ObjectShortName">IIs[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/valid_in">
+      <obj_property name="ElementShortName">valid_in</obj_property>
+      <obj_property name="ObjectShortName">valid_in</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/SigIi">
+      <obj_property name="ElementShortName">SigIi[22:0]</obj_property>
+      <obj_property name="ObjectShortName">SigIi[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/valid_out">
+      <obj_property name="ElementShortName">valid_out</obj_property>
+      <obj_property name="ObjectShortName">valid_out</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/wen">
+      <obj_property name="ElementShortName">wen</obj_property>
+      <obj_property name="ObjectShortName">wen</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/ren1">
+      <obj_property name="ElementShortName">ren1</obj_property>
+      <obj_property name="ObjectShortName">ren1</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/ren2">
+      <obj_property name="ElementShortName">ren2</obj_property>
+      <obj_property name="ObjectShortName">ren2</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/waddr">
+      <obj_property name="ElementShortName">waddr[8:0]</obj_property>
+      <obj_property name="ObjectShortName">waddr[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/raddr1">
+      <obj_property name="ElementShortName">raddr1[8:0]</obj_property>
+      <obj_property name="ObjectShortName">raddr1[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/raddr2">
+      <obj_property name="ElementShortName">raddr2[8:0]</obj_property>
+      <obj_property name="ObjectShortName">raddr2[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/wdata">
+      <obj_property name="ElementShortName">wdata[28:0]</obj_property>
+      <obj_property name="ObjectShortName">wdata[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/rdata1">
+      <obj_property name="ElementShortName">rdata1[28:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata1[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/rdata2">
+      <obj_property name="ElementShortName">rdata2[28:0]</obj_property>
+      <obj_property name="ObjectShortName">rdata2[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/SigIi_nxt">
+      <obj_property name="ElementShortName">SigIi_nxt[22:0]</obj_property>
+      <obj_property name="ObjectShortName">SigIi_nxt[22:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/row_count">
+      <obj_property name="ElementShortName">row_count[8:0]</obj_property>
+      <obj_property name="ObjectShortName">row_count[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/row_count_nxt">
+      <obj_property name="ElementShortName">row_count_nxt[8:0]</obj_property>
+      <obj_property name="ObjectShortName">row_count_nxt[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/col_count">
+      <obj_property name="ElementShortName">col_count[8:0]</obj_property>
+      <obj_property name="ObjectShortName">col_count[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/col_count_nxt">
+      <obj_property name="ElementShortName">col_count_nxt[8:0]</obj_property>
+      <obj_property name="ObjectShortName">col_count_nxt[8:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/II_upper_row">
+      <obj_property name="ElementShortName">II_upper_row[28:0]</obj_property>
+      <obj_property name="ObjectShortName">II_upper_row[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/II_upper_row_next">
+      <obj_property name="ElementShortName">II_upper_row_next[28:0]</obj_property>
+      <obj_property name="ObjectShortName">II_upper_row_next[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/IId">
+      <obj_property name="ElementShortName">IId[28:0]</obj_property>
+      <obj_property name="ObjectShortName">IId[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/prev_window">
+      <obj_property name="ElementShortName">prev_window[28:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_window[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/box_coeff_tb/uut/IEE_bk/prev_window_nxt">
+      <obj_property name="ElementShortName">prev_window_nxt[28:0]</obj_property>
+      <obj_property name="ObjectShortName">prev_window_nxt[28:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/valid_in_pip">
+      <obj_property name="ElementShortName">valid_in_pip</obj_property>
+      <obj_property name="ObjectShortName">valid_in_pip</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/box_coeff_tb/uut/IEE_bk/valid_in_pip_nxt">
+      <obj_property name="ElementShortName">valid_in_pip_nxt</obj_property>
+      <obj_property name="ObjectShortName">valid_in_pip_nxt</obj_property>
+   </wvobject>
+</wave_config>

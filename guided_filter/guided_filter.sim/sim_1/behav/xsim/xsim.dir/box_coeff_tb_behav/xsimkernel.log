@@ -1,0 +1,4 @@
+Running: xsim.dir/box_coeff_tb_behav/xsimk -simmode gui -wdb box_coeff_tb_behav.wdb -simrunnum 0 -socket 58265
+Design successfully loaded
+Design Loading Memory Usage: 31740 KB (Peak: 31740 KB)
+Design Loading CPU Usage: 90 ms

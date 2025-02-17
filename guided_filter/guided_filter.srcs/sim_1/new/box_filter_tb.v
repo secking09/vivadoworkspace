@@ -3,7 +3,7 @@
 module box_top_tb;
     parameter IMG_WIDTH = 512;
     parameter IMG_HEIGHT = 512;
-    parameter window_Size = 21; // Adjust as needed
+    parameter window_Size = 11; // Adjust as needed
     
     reg clk;
     reg rst_n;
@@ -12,6 +12,7 @@ module box_top_tb;
     reg valid_in_pip;
     wire [7:0] Iq_pip;
     wire [17:0] SigIi;
+    wire [25:0] SigIiIi;
     wire valid_out;
     
     integer i, j, file, output_file;
@@ -20,10 +21,11 @@ module box_top_tb;
     box_top uut (
         .clk(clk),
         .rst_n(rst_n),
-        .Iq_pip(Iq_pip),
-        .Is_pip(Is_pip),
-        .valid_in_pip(valid_in_pip),
+        .Iq(Iq_pip),
+        .Is(Is_pip),
+        .valid_in(valid_in_pip),
         .SigIi(SigIi),
+        .SigIiIi(SigIiIi),
         .valid_out(valid_out)
     );
     
@@ -32,7 +34,7 @@ module box_top_tb;
     
     // Read image file
     initial begin
-        file = $fopen("output_pixels.txt", "r");
+        file = $fopen("correct.txt", "r");
         output_file = $fopen("yes.txt", "w");
         if (file == 0) begin
             $display("Failed to open image file!");

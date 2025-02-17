@@ -6,4 +6,4 @@
 # Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 #
 
-vivado -log linebuffer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source linebuffer.tcl
+vivado -log coeff_ak.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source coeff_ak.tcl

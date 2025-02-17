@@ -1,0 +1,108 @@
+module Second_Stage_AK
+  #(parameter STRIPEWIDTH = 120, parameter ALPHA = 15, parameter A_FRACBITS = 8)	//S = 2*alpha+1
+   (clk, rst_n, SigIi, Sigpi, SigIiIi, SigIipi, valid_in, ak, SigIi_pip, Sigpi_pip, valid_out);
+
+  parameter SIGI_BITS = $clog2((2*ALPHA+1)*(2*ALPHA+1))+8;	//18
+  parameter SIGII_BITS = $clog2((2*ALPHA+1)*(2*ALPHA+1))+16;	//26
+  parameter AREA_BITS = $clog2((2*ALPHA+1)*(2*ALPHA+1));	//10
+  parameter DENOM_BITS = SIGII_BITS+AREA_BITS+1;	//37
+  parameter W2EPS = (36'd6005195);//eps*255*255*(2*alpha+1)^4
+
+  parameter NUMOFROWS = 1080;	//1080p :^)
+  parameter NUMOFCOLS = STRIPEWIDTH+2*ALPHA;	//ex: 180
+
+  parameter ROWBITS = $clog2(NUMOFROWS);
+  parameter COLBITS = $clog2(NUMOFCOLS);
+
+  parameter NUM_STAGES = 10;
+
+  input 				clk;
+  input 				rst_n;
+  input 				valid_in;
+  input [SIGI_BITS-1:0]	SigIi;
+  input [SIGI_BITS-1:0]	Sigpi;
+  input [SIGII_BITS-1:0]	SigIiIi;
+  input [SIGII_BITS-1:0]	SigIipi;
+  output reg signed [4+A_FRACBITS:0]	ak;
+  output [SIGI_BITS-1:0]	SigIi_pip;
+  output [SIGI_BITS-1:0]	Sigpi_pip;
+  output valid_out;
+
+  reg [ROWBITS-1:0] row_count, row_count_nxt;
+  reg [COLBITS-1:0] col_count, col_count_nxt;
+
+  reg [AREA_BITS-1:0] area_count, area_count_nxt;
+  wire signed [DENOM_BITS-1:0] Ii2Area, IipiArea, IiIi, Iipi;
+  wire signed [DENOM_BITS-1:0] Denom, Numer;
+
+  reg signed [DENOM_BITS+A_FRACBITS-1:0] div_a;
+  reg signed [DENOM_BITS-1:0] div_b;
+
+  wire signed [DENOM_BITS+A_FRACBITS-1:0] quotient_inst;
+
+  reg signed [4+A_FRACBITS:0]	ak_nxt;
+
+  reg div_in_en;
+
+
+  assign Ii2Area  = area_count*SigIiIi;
+  assign IipiArea = area_count*SigIipi;
+  assign IiIi = SigIi*SigIi;
+  assign Iipi = SigIi*Sigpi;
+  assign Denom = W2EPS+Ii2Area-IiIi;
+  assign Numer = IipiArea-Iipi;
+
+  always@(*)
+  begin
+    row_count_nxt = row_count;
+    col_count_nxt = col_count;
+    area_count_nxt = area_count;
+    ak_nxt = quotient_inst[4+A_FRACBITS:0];
+    if(valid_in)
+    begin
+      row_count_nxt = (col_count==(NUMOFCOLS-1))?((row_count==(NUMOFROWS-1))?0:row_count+1):row_count;
+      col_count_nxt = (col_count==(NUMOFCOLS-1))?0:col_count+1;
+      area_count_nxt = (col_count==(NUMOFCOLS-1))?((row_count<=(ALPHA-1))?area_count+(2*ALPHA+1):((row_count>=(1079-ALPHA))?area_count-(2*ALPHA+1):area_count)):area_count;
+      area_count_nxt = (col_count==(NUMOFCOLS-1) && row_count==(NUMOFROWS-1))?(ALPHA+1)*(2*ALPHA+1):area_count_nxt;
+    end
+  end
+
+  always@(posedge clk or negedge rst_n)
+  begin
+    if(!rst_n)
+    begin
+      row_count <= 0;
+      col_count <= 0;
+      area_count <= (ALPHA+1)*(2*ALPHA+1);
+      div_in_en <= 0;
+      ak <= 0;
+      div_a <= 0;
+      div_b <= 0;
+    end
+    else
+    begin
+      row_count <= row_count_nxt;
+      col_count <= col_count_nxt;
+      area_count <= area_count_nxt;
+      div_in_en <= valid_in;
+      ak <= ak_nxt;
+      div_a <= {Numer, {A_FRACBITS{1'b0}}};
+      div_b <= Denom;
+    end
+  end
+
+  //45/37
+  DW_div_pipe #(DENOM_BITS+A_FRACBITS, DENOM_BITS, 1, 1, NUM_STAGES, 1, 1, 0)  U1
+              (
+                .clk(clk),   .rst_n(rst_n),   .en(1'b1),
+                .a(div_a),   .b(div_b),   .quotient(quotient_inst),
+                .remainder(),   .divide_by_0()
+              );
+
+  Shift_Reg #(NUM_STAGES, 1) valid_sr
+            (.clk(clk), .rst_n(rst_n), .in_data(div_in_en), .out_data(valid_out));
+
+  Shift_Reg #(NUM_STAGES+1, SIGI_BITS*2) sigIi_sigpi_sr
+            (.clk(clk), .rst_n(rst_n), .in_data({SigIi, Sigpi}), .out_data({SigIi_pip, Sigpi_pip}));
+
+endmodule

@@ -1,34 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu4eg-sfvc784-1-i" LaunchTime="1739353044" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/IIE.dcp">
-  <File Type="VDS-TIMINGSUMMARY" Name="linebuffer_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="linebuffer.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="linebuffer_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="linebuffer_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="linebuffer_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="linebuffer.vds"/>
-  <File Type="REPORTS-TCL" Name="linebuffer_reports.tcl"/>
-  <File Type="VDS-TIMING-PB" Name="linebuffer_timing_summary_synth.pb"/>
-  <File Type="PA-TCL" Name="linebuffer.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xczu4eg-sfvc784-1-i" LaunchTime="1739782612" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/IIE.dcp">
+  <File Type="VDS-TIMINGSUMMARY" Name="coeff_ak_timing_summary_synth.rpt"/>
+  <File Type="RDS-DCP" Name="coeff_ak.dcp"/>
+  <File Type="RDS-UTIL-PB" Name="coeff_ak_utilization_synth.pb"/>
+  <File Type="RDS-UTIL" Name="coeff_ak_utilization_synth.rpt"/>
+  <File Type="RDS-PROPCONSTRS" Name="coeff_ak_drc_synth.rpt"/>
+  <File Type="RDS-RDS" Name="coeff_ak.vds"/>
+  <File Type="REPORTS-TCL" Name="coeff_ak_reports.tcl"/>
+  <File Type="VDS-TIMING-PB" Name="coeff_ak_timing_summary_synth.pb"/>
+  <File Type="PA-TCL" Name="coeff_ak.tcl"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/new/linebuffer.v">
+    <File Path="$PSRCDIR/sources_1/new/shift_register.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/bufferCu22.v">
+    <File Path="$PSRCDIR/sources_1/new/coeff_ak.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/buffer_CU.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -66,9 +57,41 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/linebuffer.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/buffer_CU.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/ak_coeff.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bufferCu22.v">
+      <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="linebuffer"/>
+      <Option Name="TopModule" Val="coeff_ak"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
@@ -95,4 +118,5 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2022"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="div_gen_0"/>
 </GenRun>

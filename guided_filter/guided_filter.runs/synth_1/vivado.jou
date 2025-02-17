@@ -2,12 +2,12 @@
 # Vivado v2022.1 (64-bit)
 # SW Build 3526262 on Mon Apr 18 15:47:01 MDT 2022
 # IP Build 3524634 on Mon Apr 18 20:55:01 MDT 2022
-# Start of session at: Wed Feb 12 10:37:27 2025
-# Process ID: 149896
+# Start of session at: Mon Feb 17 09:56:54 2025
+# Process ID: 828302
 # Current directory: /home/sg24duk/vivadoworkspace/guided_filter/guided_filter.runs/synth_1
-# Command line: vivado -log linebuffer.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source linebuffer.tcl
-# Log file: /home/sg24duk/vivadoworkspace/guided_filter/guided_filter.runs/synth_1/linebuffer.vds
+# Command line: vivado -log coeff_ak.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source coeff_ak.tcl
+# Log file: /home/sg24duk/vivadoworkspace/guided_filter/guided_filter.runs/synth_1/coeff_ak.vds
 # Journal file: /home/sg24duk/vivadoworkspace/guided_filter/guided_filter.runs/synth_1/vivado.jou
 # Running On: nv00240, OS: Linux, CPU Frequency: 2300.000 MHz, CPU Physical cores: 8, Host memory: 67022 MB
 #-----------------------------------------------------------
-source linebuffer.tcl -notrace
+source coeff_ak.tcl -notrace

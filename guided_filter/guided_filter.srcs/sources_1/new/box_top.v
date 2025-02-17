@@ -22,10 +22,7 @@
 
 module box_top #(
     // Parameters
-    parameter RADIUS = 10,
-    parameter INTEGRAL_WIDTH = 21,
-    parameter III_BITS = 29,
-    parameter SUM_BITS = 18,
+    parameter RADIUS = 5,
     parameter ROWS = 512,
     parameter COLS = 512
   )(
@@ -33,27 +30,70 @@ module box_top #(
     input rst_n,
 
     // Signals for IIE module
-    input [7:0] Iq_pip,  // Example signal, replace with correct input width
-    input [7:0] Is_pip,  // Example signal, replace with correct input width
-    input valid_in_pip,  // Signal to indicate valid input
+    input [7:0] Iq,  // Example signal, replace with correct input width
+    input [7:0] Is,  // Example signal, replace with correct input width
+    input valid_in,  // Signal to indicate valid input
 
     // Signals from IIE to be connected to RAM
-    output [SUM_BITS-1:0] SigIi,
+    output [SIGI_WIDTH-1:0] SigIi,
+    output [SIGII_WIDTH-1:0] SigIiIi,
     output valid_out
   );
+
+  parameter SUM_BITS     = $clog2((2*RADIUS+1)*(COLS+4*RADIUS))+8;
+  parameter SUM_I_SQUARE = $clog2((2*RADIUS+1)*(COLS+4*RADIUS))+16;
+  parameter SIGI_WIDTH   = $clog2((2*RADIUS+1)*(2*RADIUS+1))+8;
+  parameter SIGII_WIDTH  = $clog2((2*RADIUS+1)*(2*RADIUS+1))+16;
   parameter ROWBITS = $clog2(ROWS);
   parameter COLBITS = $clog2(COLS);
+
   wire wen_w;
   wire [COLBITS-1:0] waddr_w;
   wire [COLBITS-1:0] raddr1_w;
   wire [COLBITS-1:0] raddr2_w;
-  wire [INTEGRAL_WIDTH-1:0] wdata_w;
   wire ren1_w;
   wire ren2_w;
-  wire [INTEGRAL_WIDTH-1:0] rdata1_w;
-  wire [INTEGRAL_WIDTH-1:0] rdata2_w;
 
 
+  reg [15:0] IqIq;
+  reg [15:0] IsIs;
+  reg valid_in_reg;
+  reg [7:0] Iq_reg;
+  reg [7:0] Is_reg;
+
+
+  wire valid_out_sigIiIi;
+  wire valid_out_sigIi;
+
+
+
+
+
+
+  always @(posedge clk or negedge rst_n)
+  begin
+
+    if(!rst_n)
+    begin
+
+      IqIq <= 16'b0;
+      IsIs <= 16'b0;
+      valid_in_reg  <= 0;
+      Iq_reg        <= 0;
+      Is_reg        <= 0;
+
+    end
+    else
+    begin
+
+      IqIq          <= Iq * Iq;
+      IsIs          <= Is * Is;
+      valid_in_reg  <= valid_in;
+      Iq_reg        <= Iq;
+      Is_reg        <= Is;
+
+    end
+  end
 
 
 
@@ -63,45 +103,82 @@ module box_top #(
   IIE #(
         .IMAGE_WIDTH(8),
         .RADIUS(RADIUS),
-        .INTEGRAL_WIDTH(INTEGRAL_WIDTH),
-        .SUM_BITS(SUM_BITS),
+        .INTEGRAL_WIDTH(SUM_BITS),
+        .SUM_BITS(SIGI_WIDTH),
         .ROWS(ROWS),
         .COLS(COLS)
       ) IIE_Ii (
         .clk(clk),
         .reset(rst_n),
-        .Iq(Iq_pip),
-        .Is(Is_pip),
-        .valid_in(valid_in_pip),
+        .Iq(Iq_reg),
+        .Is(Is_reg),
+        .valid_in(valid_in_reg),
         .SigIi(SigIi),
-        .valid_out(valid_out),
+        .valid_out(valid_out_sigIi),
         .wen(wen_w),
         .ren1(ren1_w),
         .ren2(ren2_w),
         .waddr(waddr_w),
         .raddr1(raddr1_w),
         .raddr2(raddr2_w),
-        .wdata(wdata_w),
-        .rdata1(rdata1_w),
-        .rdata2(rdata2_w)
+        .wdata(wdata_w_Ii),
+        .rdata1(rdata1_w_Ii),
+        .rdata2(rdata2_w_Ii)
       );
+
+  IIE #(
+        .IMAGE_WIDTH(16),
+        .RADIUS(RADIUS),
+        .INTEGRAL_WIDTH(SUM_I_SQUARE),
+        .SUM_BITS(SIGII_WIDTH),
+        .ROWS(ROWS),
+        .COLS(COLS)
+      ) IIE_IiIi (
+        .clk(clk),
+        .reset(rst_n),
+        .Iq(IqIq),
+        .Is(IsIs),
+        .valid_in(valid_in_reg),
+        .SigIi(SigIiIi),
+        .valid_out(valid_out_sigIiIi),
+        .wen(),
+        .ren1(),
+        .ren2(),
+        .waddr(),
+        .raddr1(),
+        .raddr2(),
+        .wdata(wdata_w_IiIi),
+        .rdata1(rdata1_w_IiIi),
+        .rdata2(rdata2_w_IiIi)
+      );
+
+
+  wire [SUM_BITS-1:0] wdata_w_Ii;
+  wire [SUM_BITS-1:0] rdata1_w_Ii;
+  wire [SUM_BITS-1:0] rdata2_w_Ii;
+
+  wire [SUM_I_SQUARE-1:0] wdata_w_IiIi;
+  wire [SUM_I_SQUARE-1:0] rdata1_w_IiIi;
+  wire [SUM_I_SQUARE-1:0] rdata2_w_IiIi;
+
+
 
   // RAM instance
   RAM_top #(
-            .DATA_WIDTH(INTEGRAL_WIDTH), // Total width of the concatenated data
+            .DATA_WIDTH(SUM_BITS+SUM_I_SQUARE), // Total width of the concatenated data
             .WORD_WIDTH(COLS)
           ) mem (
             .clk(clk),
             .rst_n(rst_n),
             .wen(wen_w),
             .waddr(waddr_w),
-            .wdata(wdata_w),  // Concatenated write data
+            .wdata({wdata_w_Ii,wdata_w_IiIi}),  // Concatenated write data
             .ren1(ren1_w),
             .raddr1(raddr1_w),
-            .rdata1(rdata1_w),  // Concatenated read data
+            .rdata1({rdata1_w_Ii,rdata1_w_IiIi}),  // Concatenated read data
             .ren2(ren2_w),
             .raddr2(raddr2_w),
-            .rdata2(rdata2_w)   // Concatenated read data
+            .rdata2({rdata2_w_Ii,rdata2_w_IiIi})   // Concatenated read data
           );
 
   // Additional signals like `wdata_Ii`, `wdata_pi`, `wdata_IiIi`, `wdata_Iipi` should be
